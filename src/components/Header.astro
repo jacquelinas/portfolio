@@ -1,0 +1,394 @@
+---
+// Header component for portfolio - Floating Dock with Dynamic i18n & SVG Vector Icons
+const currentPath = Astro.url.pathname;
+const isEn = currentPath.startsWith('/en');
+
+const cvUrl = isEn ? '/cv-jacquelina-en.pdf' : '/cv-jacquelina-es.pdf';
+const cvTitle = isEn ? 'Download English CV' : 'Descargar CV Español';
+const cvLabel = isEn ? 'CV EN' : 'CV ES';
+---
+
+<header class="header-container">
+    <div class="header-glow-ambient"></div>
+    <nav class="nav-dock" data-menu-open="false">
+        <div class="nav-brand">
+            <a href={isEn ? "/en/" : "/"} class="brand-link">
+                <span class="brand-text">JV</span>
+                <div class="brand-underline"></div>
+            </a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="site-navigation">
+            <span class="sr-only">Menu</span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        
+        <div class="nav-collections" id="site-navigation">
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">{isEn ? "About" : "Conóceme"}</a></li>
+                <li><a href="#projects" class="nav-link">{isEn ? "Projects" : "Proyectos"}</a></li>
+                <li><a href="#skills" class="nav-link">{isEn ? "Skills" : "Habilidades"}</a></li>
+                <li><a href="#contact" class="nav-link">{isEn ? "Contact" : "Contacto"}</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <!-- Toggle Theme (Sun/Moon) -->
+                <button id="themeToggle" class="control-btn" aria-label="Toggle theme" title="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+
+                <!-- Language Switch (ES/EN) -->
+                <div class="lang-switch-container">
+                    <span class={`lang-label ${!isEn ? 'active' : ''}`}>ES</span>
+                    <label class="lang-switch">
+                        <input type="checkbox" id="langToggle" checked={isEn}>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class={`lang-label ${isEn ? 'active' : ''}`}>EN</span>
+                </div>
+            </div>
+
+            <!-- Botón de CV Dinámico (Cambia automáticamente entre ES y EN) -->
+            <div class="nav-actions">
+                <a href={cvUrl} class="btn btn-primary nav-btn-compact" download title={cvTitle}>
+                    <span class="btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="9" x2="16" y2="9"/><line x1="12" y1="13" x2="16" y2="13"/><line x1="10" y1="17" x2="16" y2="17"/></svg>
+                    </span>
+                    <span class="btn-text">{cvLabel}</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .header-container {
+        position: fixed;
+        top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
+        padding: 0 1rem;
+        pointer-events: none;
+    }
+    
+    .nav-dock {
+        pointer-events: auto;
+        background: rgba(10, 10, 10, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--color-border);
+        border-radius: 50px;
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: var(--shadow-soft);
+        transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    :global(.light-theme) .nav-dock {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(2, 132, 199, 0.25);
+    }
+    
+    .brand-link {
+        text-decoration: none;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding-right: 1rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    :global(.light-theme) .brand-link {
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+    
+    .brand-text {
+        font-size: 1.4rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--color-accent), #00F5FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .nav-collections {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: var(--color-text-primary);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.25s ease;
+    }
+    
+    .nav-link:hover {
+        color: var(--color-accent);
+    }
+    
+    .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        padding-left: 1rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    :global(.light-theme) .nav-controls {
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .control-btn {
+        background: transparent;
+        border: none;
+        color: var(--color-text-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.4rem;
+        border-radius: 50%;
+        transition: all 0.25s ease;
+    }
+
+    .control-btn:hover {
+        color: var(--color-accent);
+        background: rgba(0, 212, 255, 0.12);
+        transform: rotate(15deg);
+    }
+
+    .lang-switch-container {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .lang-label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--color-muted);
+        user-select: none;
+        transition: color 0.25s ease;
+    }
+
+    .lang-label.active {
+        color: var(--color-accent);
+    }
+
+    .lang-switch {
+        position: relative;
+        display: inline-block;
+        width: 42px;
+        height: 22px;
+    }
+
+    .lang-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: .3s;
+    }
+
+    :global(.light-theme) .slider {
+        background-color: rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.18);
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 2px;
+        bottom: 2px;
+        background-color: var(--color-accent);
+        transition: .3s;
+        box-shadow: 0 0 6px var(--color-accent);
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+
+    .slider.round { border-radius: 34px; }
+    .slider.round:before { border-radius: 50%; }
+    
+    .nav-actions { display: flex; }
+
+    .nav-btn-compact {
+        min-width: auto !important;
+        padding: 0.45rem 1.1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .nav-toggle {
+        display: none;
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0;
+    }
+
+    .nav-toggle-bar {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--color-accent);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    @media (max-width: 900px) {
+        .header-container { top: 10px; }
+        .nav-dock { width: 100%; justify-content: space-between; border-radius: 20px; }
+        .nav-toggle { display: flex; }
+        .brand-link, .nav-controls { border: none; padding: 0; }
+        .nav-collections {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            left: 0;
+            flex-direction: column;
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            transform-origin: top;
+            transform: scaleY(0);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            gap: 1.5rem;
+        }
+
+        :global(.light-theme) .nav-collections {
+            background: rgba(240, 244, 248, 0.95);
+        }
+
+        .nav-dock[data-menu-open="true"] .nav-collections {
+            opacity: 1;
+            transform: scaleY(1);
+            pointer-events: auto;
+        }
+
+        .nav-menu { flex-direction: column; align-items: center; width: 100%; }
+        .nav-controls { flex-direction: column; width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.25rem; }
+        :global(.light-theme) .nav-controls { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+        .nav-actions { width: 100%; justify-content: center; }
+    }
+</style>
+
+<script>
+    function initHeader() {
+        const nav = document.querySelector('.nav-dock');
+        const toggle = document.getElementById('navToggle');
+        const collections = document.getElementById('site-navigation');
+
+        if (nav && toggle && collections) {
+            const closeMenu = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                nav.setAttribute('data-menu-open', 'false');
+            };
+
+            toggle.onclick = () => {
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                if (expanded) closeMenu();
+                else {
+                    toggle.setAttribute('aria-expanded', 'true');
+                    nav.setAttribute('data-menu-open', 'true');
+                }
+            };
+
+            collections.querySelectorAll('.nav-link').forEach((link) => {
+                link.onclick = closeMenu;
+            });
+        }
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+        
+        const isLight = document.documentElement.classList.contains('light-theme');
+        if (sunIcon && moonIcon) {
+            sunIcon.style.display = isLight ? 'none' : 'block';
+            moonIcon.style.display = isLight ? 'block' : 'none';
+        }
+
+        if (themeToggle) {
+            themeToggle.onclick = () => {
+                document.documentElement.classList.toggle('light-theme');
+                const lightActive = document.documentElement.classList.contains('light-theme');
+                localStorage.setItem('theme', lightActive ? 'light' : 'dark');
+                
+                if (sunIcon && moonIcon) {
+                    sunIcon.style.display = lightActive ? 'none' : 'block';
+                    moonIcon.style.display = lightActive ? 'block' : 'none';
+                }
+            };
+        }
+
+        // Language Switch Routing
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+            const isEnglish = window.location.pathname.startsWith('/en');
+            langToggle.checked = isEnglish;
+
+            langToggle.onchange = (e) => {
+                const checked = e.target.checked;
+                const targetPath = checked ? '/en/' : '/';
+                if (window.location.pathname !== targetPath) {
+                    window.location.href = targetPath;
+                }
+            };
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', initHeader);
+    document.addEventListener('astro:page-load', initHeader);
+</script>

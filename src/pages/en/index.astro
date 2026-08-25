@@ -1,31 +1,31 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';	
-import About from '../components/AboutMe.astro';
-import PortfolioShowcase from '../components/PortfolioShowcase.astro';
-import Contact from '../components/ContactForm.astro';
-import Skills from '../components/Skills.astro';
-import Footer from '../components/Footer.astro';
-import Analytics from '../components/Analytics.astro';
-import '../styles/global.css';
+import Header from '../../components/Header.astro';
+import HeroEN from '../../components/en/HeroEN.astro';	
+import AboutEN from '../../components/en/AboutMeEN.astro';
+import PortfolioShowcaseEN from '../../components/en/PortfolioShowcaseEN.astro';
+import ContactEN from '../../components/en/ContactFormEN.astro';
+import SkillsEN from '../../components/en/SkillsEN.astro';
+import FooterEN from '../../components/en/FooterEN.astro';
+import Analytics from '../../components/Analytics.astro';
+import '../../styles/global.css';
 ---
 
-<html lang="es">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jacqueline Valenzuela | Especialista en Infraestructura & Full Stack</title>
-		<meta name="description" content="Portfolio de Jacqueline Valenzuela - Especialista en Infraestructura IT, Cloud L2/L3 y Desarrolladora Full Stack" />
+		<title>Jacqueline Valenzuela | L2/L3 Tech Support & Full Stack Developer</title>
+		<meta name="description" content="Portfolio of Jacqueline Valenzuela - L2/L3 IT Infrastructure Specialist & Full Stack Developer" />
         
-        <!-- Precarregado de fuentes para evitar FOUT y saltos visuales -->
+        <!-- Precarregado de fuentes -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         
-        <!-- Transiciones suaves entre idiomas sin parpadeos -->
+        <!-- Transiciones de cliente sin recarga brusca -->
         <ClientRouter />
 
         <Analytics />
@@ -39,19 +39,19 @@ import '../styles/global.css';
 	<body>
 		<Header />
 		<main>
-			<Hero />
+			<HeroEN />
             <div id="about" class="section-shell">
-				<About />
+				<AboutEN />
             </div>
             <div id="projects" class="section-shell">
-				<PortfolioShowcase />
+				<PortfolioShowcaseEN />
             </div>
-			<Skills />
+			<SkillsEN />
             <div id="contact" class="section-shell">
-				<Contact />
+				<ContactEN />
             </div>
 		</main>
-		<Footer />
+		<FooterEN />
 	</body>
 </html>
 
@@ -88,7 +88,6 @@ import '../styles/global.css';
     }
 
     .section-shell > :global(section) { margin: 0; }
-	
 	::-webkit-scrollbar { width: 8px; }
 	::-webkit-scrollbar-track { background: #0A0A0A; }
 	::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #00D4FF, #00F5FF); border-radius: 4px; }

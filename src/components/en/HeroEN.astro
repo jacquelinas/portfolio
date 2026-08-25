@@ -1,0 +1,526 @@
+---
+// Hero component EN
+---
+
+<section id="hero" class="hero">
+    <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-particles"></div>
+        <div class="hero-glow"></div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="hero-profile">
+            <div class="hero-avatar">
+                <div class="avatar-ring"></div>
+                <div class="avatar-core">
+                    <img src="/jacque-photo.png" alt="Jacqueline Valenzuela" class="avatar-image" />
+                    <div class="avatar-overlay"></div>
+                </div>
+                <div class="floating-elements">
+                    <div class="element element-1" title="High Availability & Performance">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="element element-2" title="Cloud Infrastructure">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </div>
+                    <div class="element element-3" title="Full Stack Development">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="hero-title">                
+                <span class="title-name">Jacqueline Valenzuela</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Solutions Engineer & Infra-Dev | Bridging robust IT Infrastructure, Cloud, and Networks with agile Full Stack Development.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="btn-text">View Projects</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span class="btn-text">Get in Touch</span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-showcase">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-close"></span>
+                        <span class="btn-min"></span>
+                        <span class="btn-max"></span>
+                    </div>
+                    <div class="terminal-title">jacquelina@portfolio:~</div>
+                </div>
+                <div class="terminal-body" id="terminal-body-en">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <div class="scroll-text">Scroll</div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(5, 10, 20, 0.95), rgba(8, 18, 36, 0.92));
+        color: var(--color-text-primary);
+        padding-top: clamp(6.5rem, 12vh, 8.5rem);
+        padding-bottom: clamp(2.5rem, 6vh, 4rem);
+    }
+    
+    :global(.light-theme) .hero {
+        background: linear-gradient(135deg, rgba(240, 244, 248, 0.95), rgba(226, 232, 240, 0.92));
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+    
+    .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: grid-move 20s linear infinite;
+    }
+
+    :global(.light-theme) .hero-grid {
+        background-image: 
+            linear-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+    }
+    
+    @keyframes grid-move {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(50px, 50px); }
+    }
+    
+    .hero-particles {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+        animation: particles-float 15s ease-in-out infinite;
+    }
+    
+    @keyframes particles-float {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.1); }
+    }
+    
+    .hero-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 650px;
+        height: 650px;
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+        animation: glow-pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes glow-pulse {
+        0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+    }
+    
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        max-width: var(--measure);
+        width: 100%;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        position: relative;
+        z-index: 2;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+    }
+    
+    .hero-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .hero-avatar {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .avatar-ring {
+        position: absolute;
+        inset: 0;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--color-accent), #00F5FF, #00FF88, var(--color-accent));
+        background-size: 400% 400%;
+        animation: ring-rotate 8s linear infinite;
+    }
+    
+    @keyframes ring-rotate {
+        0% { transform: rotate(0deg); background-position: 0% 50%; }
+        100% { transform: rotate(360deg); background-position: 100% 50%; }
+    }
+    
+    .avatar-core {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 2;
+        border: 4px solid rgba(0, 212, 255, 0.3);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.25);
+    }
+    
+    .avatar-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .avatar-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 245, 255, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .avatar-core:hover .avatar-image { transform: scale(1.05); }
+    .avatar-core:hover .avatar-overlay { opacity: 1; }
+    
+    .floating-elements {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+    
+    .element {
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: rgba(10, 20, 38, 0.88);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 212, 255, 0.2);
+        backdrop-filter: blur(10px);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    :global(.light-theme) .element {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(2, 132, 199, 0.3);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 0 12px rgba(2, 132, 199, 0.15);
+    }
+    
+    .element-1 { top: 2%; left: -10%; animation-delay: 0s; }
+    .element-2 { top: 58%; right: -12%; animation-delay: 2s; }
+    .element-3 { bottom: -2%; left: 0%; animation-delay: 4s; }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(6deg); }
+    }
+    
+    .hero-title {
+        margin: 0;
+        line-height: 1.1;
+    }
+    
+    .title-name {
+        display: block;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--color-accent), #00F5FF, #00FF88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
+        letter-spacing: -0.01em;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        line-height: 1.55;
+        margin: 0;
+        max-width: 500px;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        min-width: 160px;
+    }
+
+    .hero-showcase {
+        width: 100%;
+    }
+
+    .terminal-window {
+        background: rgba(10, 15, 25, 0.88);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.12);
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+        width: 100%;
+    }
+
+    :global(.light-theme) .terminal-window {
+        background: rgba(30, 41, 59, 0.95);
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .terminal-header {
+        background: rgba(0, 0, 0, 0.35);
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .terminal-buttons {
+        display: flex;
+        gap: 6px;
+    }
+
+    .terminal-buttons span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .btn-close { background-color: #ff5f56; }
+    .btn-min { background-color: #ffbd2e; }
+    .btn-max { background-color: #27c93f; }
+
+    .terminal-title {
+        color: #a0aec0;
+        font-family: 'Fira Code', 'Courier New', monospace;
+        font-size: 0.85rem;
+        margin-left: 15px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .terminal-body {
+        padding: 18px;
+        font-family: 'Fira Code', 'Courier New', monospace;
+        font-size: 0.92rem;
+        color: #e2e8f0;
+        min-height: 180px;
+        line-height: 1.65;
+    }
+
+    .prompt { color: #27c93f; font-weight: bold; }
+    .path { color: #3b82f6; }
+    .command { color: #fff; }
+    
+    .output {
+        color: #a0aec0;
+        margin-left: 10px;
+        display: block;
+    }
+
+    .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 15px;
+        background-color: #00d4ff;
+        animation: blink 1s step-end infinite;
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        z-index: 2;
+        animation: scroll-bounce 2s ease-in-out infinite;
+    }
+    
+    @keyframes scroll-bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-8px); }
+    }
+    
+    .scroll-line {
+        width: 2px;
+        height: 32px;
+        background: linear-gradient(to bottom, var(--color-accent), transparent);
+        border-radius: 1px;
+    }
+    
+    .scroll-text {
+        font-size: 0.72rem;
+        color: var(--color-accent);
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 992px) {
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+
+        .hero-profile {
+            display: contents;
+        }
+
+        .hero-avatar {
+            order: 1;
+        }
+
+        .hero-title {
+            order: 2;
+            margin: 0;
+        }
+
+        .hero-showcase {
+            order: 3;
+            width: 100%;
+        }
+
+        .hero-subtitle {
+            order: 4;
+            margin: 0;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            order: 5;
+            margin-top: 0.5rem;
+        }
+
+        .element-1 { left: 2%; }
+        .element-2 { right: 2%; }
+
+        .terminal-body {
+            font-size: 0.85rem;
+            min-height: 160px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .title-name { font-size: 2.2rem; }
+        .hero-avatar { width: 180px; height: 180px; }
+        .avatar-core { width: 160px; height: 160px; }
+        .element { width: 36px; height: 36px; }
+        .element svg { width: 18px; height: 18px; }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const terminalBody = document.getElementById('terminal-body-en');
+        if (!terminalBody) return;
+
+        const commands = [
+            { cmd: "whoami", out: "L2/L3 Tech Support Specialist & Full Stack Developer" },
+            { cmd: "cat skills.txt", out: "[██████████] IT Infrastructure & Networks\n<span class='output'>[██████████] Windows/Linux Server & Cloud</span>\n<span class='output'>[████████░░] React & Astro</span>" },
+            { cmd: "systemctl status problem-solving", out: "<span style='color:#27c93f'>● active (running)</span> - Resolving critical incidents 24/7" }
+        ];
+
+        const typeCommand = async (cmdObj) => {
+            return new Promise(resolve => {
+                const line = document.createElement('div');
+                line.innerHTML = `<span class="prompt">jacqui@sys</span><span class="path">:~$</span> <span class="command"></span><span class="cursor"></span>`;
+                terminalBody.appendChild(line);
+                
+                const cmdSpan = line.querySelector('.command');
+                const cursor = line.querySelector('.cursor');
+                let charIndex = 0;
+
+                const typingInterval = setInterval(() => {
+                    cmdSpan.textContent += cmdObj.cmd[charIndex];
+                    charIndex++;
+
+                    if (charIndex === cmdObj.cmd.length) {
+                        clearInterval(typingInterval);
+                        setTimeout(() => {
+                            cursor?.remove();
+                            const outputLine = document.createElement('div');
+                            outputLine.innerHTML = `<span class="output">${cmdObj.out}</span>`;
+                            terminalBody.appendChild(outputLine);
+                            resolve();
+                        }, 400);
+                    }
+                }, 50);
+            });
+        };
+
+        const runSequence = async () => {
+            terminalBody.innerHTML = '';
+            for (let i = 0; i < commands.length; i++) {
+                await typeCommand(commands[i]);
+                await new Promise(r => setTimeout(r, 800));
+            }
+            const finalLine = document.createElement('div');
+            finalLine.innerHTML = `<span class="prompt">jacqui@sys</span><span class="path">:~$</span><span class="cursor"></span>`;
+            terminalBody.appendChild(finalLine);
+        };
+
+        setTimeout(runSequence, 1000);
+    });
+</script>

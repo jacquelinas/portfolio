@@ -1,0 +1,21 @@
+---
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const plausibleScript = import.meta.env.PUBLIC_PLAUSIBLE_SCRIPT ?? 'https://plausible.io/js/script.js';
+
+const umamiSrc = import.meta.env.PUBLIC_UMAMI_SRC;
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+---
+
+{plausibleDomain && (
+    <script defer src={plausibleScript} data-domain={plausibleDomain}></script>
+)}
+
+{umamiSrc && umamiWebsiteId && (
+    <script
+        async
+        defer
+        src={umamiSrc}
+        data-website-id={umamiWebsiteId}
+    ></script>
+)}
+

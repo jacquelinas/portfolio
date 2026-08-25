@@ -1,0 +1,592 @@
+---
+// Skills & Interests component - Modern Bento Box Layout with Vector Icons
+---
+
+<section id="skills" class="skills section-shell">
+    <div class="container">
+        <h2 class="section-title">Mis Habilidades</h2>
+        <p class="section-subtitle">Un enfoque integral que fusiona la experiencia en Infraestructura IT con el desarrollo Full Stack y la exploración en Web3.</p>
+
+        <div class="bento-grid">
+            <!-- Bento 1: Infraestructura & Cloud (Hero Bento Card) -->
+            <div class="bento-card bento-hero bento-cloud">
+                <div class="bento-header">
+                    <div class="bento-icon-wrapper">
+                        <svg class="bento-svg-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="bento-title">Infraestructura & Cloud</h3>
+                        <span class="bento-badge">Especialidad Core</span>
+                    </div>
+                </div>
+                <p class="bento-desc">Gestión de entornos críticos, virtualización, balanceo de carga, alta disponibilidad y despliegues en la nube.</p>
+                <div class="bento-tags">
+                    <span class="tag tag-accent">Linux Server</span>
+                    <span class="tag tag-accent">Windows Server</span>
+                    <span class="tag tag-accent">Docker</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Google Cloud</span>
+                    <span class="tag">VMware</span>
+                </div>
+            </div>
+
+            <!-- Bento 2: Frontend -->
+            <div class="bento-card bento-frontend">
+                <div class="bento-header">
+                    <div class="bento-icon-wrapper">
+                        <svg class="bento-svg-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <h3 class="bento-title">Frontend</h3>
+                </div>
+                <div class="bento-tags">
+                    <span class="tag tag-accent">Astro</span>
+                    <span class="tag tag-accent">React</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">JavaScript (ES6+)</span>
+                    <span class="tag">HTML5 / CSS3</span>
+                </div>
+            </div>
+
+            <!-- Bento 3: Backend & Base de Datos -->
+            <div class="bento-card bento-backend">
+                <div class="bento-header">
+                    <div class="bento-icon-wrapper">
+                        <svg class="bento-svg-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+                    </div>
+                    <h3 class="bento-title">Backend & Datos</h3>
+                </div>
+                <div class="bento-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">APIs REST</span>
+                    <span class="tag">Firestore NoSQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">AWS Lambda</span>
+                    <span class="tag">Firebase</span>
+                </div>
+            </div>
+
+            <!-- Bento 4: Soft Skills (Acento Rosa) -->
+            <div class="bento-card bento-soft">
+                <div class="bento-header">
+                    <div class="bento-icon-wrapper icon-pink">
+                        <svg class="bento-svg-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="bento-title">HHBB / Soft Skills</h3>
+                </div>
+                <div class="bento-tags">
+                    
+                    <span class="tag tag-pink">Liderazgo</span>
+                    <span class="tag tag-pink">Trabajo en equipo</span>
+                    <span class="tag tag-pink">Comunicación</span>
+                    <span class="tag tag-pink">Gestión del tiempo</span>
+                    <span class="tag tag-pink">Pensamiento crítico</span>                    
+                    <span class="tag tag-pink">Resolución de problemas</span>
+                    <span class="tag tag-pink">Empatía</span>
+                </div>
+            </div>
+
+            <!-- Bento 5: Herramientas & ITSM -->
+            <div class="bento-card bento-tools">
+                <div class="bento-header">
+                    <div class="bento-icon-wrapper">
+                        <svg class="bento-svg-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3 class="bento-title">Herramientas & ITIL</h3>
+                </div>
+                <div class="bento-tags">
+                    <span class="tag">MeshCentral</span>
+                    <span class="tag">ITIL Framework</span>
+                    <span class="tag">Microsoft 365</span>
+                    <span class="tag">Google Workspace</span>
+                    <span class="tag">GitHub</span>
+                </div>
+            </div>
+
+            <!-- Bento 6: Sistemas & Hardware -->
+            <div class="bento-card bento-systems">
+                <div class="bento-header">
+                    <div class="bento-icon-wrapper">
+                        <svg class="bento-svg-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                    </div>
+                    <h3 class="bento-title">Sistemas & OS</h3>
+                </div>
+                <div class="bento-tags">
+                    <span class="tag">Windows</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">macOS</span>
+                    <span class="tag">Hyper-V</span>
+                    <span class="tag">Hardware</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN INTERESES, EDUCACIÓN Y COMUNICACIÓN -->
+<section id="education" class="education section-shell">
+	<div class="container">
+		<h2 class="section-title">Intereses & Compromiso</h2>
+		<div class="education-grid">
+			<!-- Impacto y Propósito -->
+			<div class="education-category">
+				<h3 class="category-title">
+                    <svg class="edu-title-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1.2 5 1 10-2 13a6.9 6.9 0 0 1-6 5Z"/><path d="M12 20v-8"/></svg>
+                    Impacto y Propósito
+                </h3>
+				<div class="education-items">
+					<div class="education-item">
+						<div class="education-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+						<div class="education-content">
+							<h4 class="education-name">Tecnología con Conciencia Social</h4>
+							<p class="education-description">Apasionada por crear soluciones que generen un impacto positivo y escalable para las personas.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Intereses Personales -->
+			<div class="education-category">
+				<h3 class="category-title">
+                    <svg class="edu-title-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    Intereses Personales
+                </h3>
+				<div class="education-items">
+					<div class="education-item">
+						<div class="education-icon icon-pink">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </div>
+						<div class="education-content">
+							<h4 class="education-name">Bienestar Animal</h4>
+							<p class="education-description">Siento un profundo amor y respeto por los animales, comprometida activamente con su bienestar y defensa.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Web3 & Aprendizaje continuo -->
+			<div class="education-category">
+				<h3 class="category-title">
+                    <svg class="edu-title-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Estoy aprendiendo
+                </h3>
+				<ul class="edu-list">
+                    <li>
+                    	<span class="edu-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 3 15.6"/>
+                                <circle cx="12" cy="13" r="2"/>
+                                <path d="M12 9v2"/>
+                                <path d="M12 15v2"/>
+                                <path d="M8 13h2"/>
+                                <path d="M14 13h2"/>
+                            </svg>
+                        </span>
+						<span class="edu-name">Google Cloud Engineer</span>
+						<span class="edu-badge">En curso</span>
+					</li>
+                    <li>
+                    	<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2 3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>
+						<span class="edu-name">English</span>
+						<span class="edu-badge">Continuo</span>
+					</li>
+                    <li>
+                    	<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg></span>
+						<span class="edu-name">Japonés</span>
+						<span class="edu-badge">Continuo</span>
+					</li>
+                    <li>
+						<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+						<span class="edu-name">Smart Contracts</span>
+						<span class="edu-badge">Soon</span>
+					</li>
+                    <li>
+						<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+						<span class="edu-name">Blockchain & DeFi</span>
+						<span class="edu-badge">Práctica</span>
+					</li>
+					<li>
+						<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+						<span class="edu-name">Seguridad en Web3</span>
+						<span class="edu-badge">Base</span>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Comunicación Global -->
+			<div class="education-category">
+				<h3 class="category-title">
+                    <svg class="edu-title-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    Comunicación Global
+                </h3>
+				<p class="edu-note">Me encantan las finanzas descentralizadas y me gustaría trabajar en este mundo; actualmente aprendo cómo la Blockchain impacta en la cadena de suministros comerciales.</p>
+				<ul class="edu-list">
+					<li>
+						<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+						<span class="edu-name">Inglés</span>
+						<span class="edu-badge">C1</span>
+					</li>
+					<li>
+						<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg></span>
+						<span class="edu-name">Japonés</span>
+						<span class="edu-badge">A1</span>
+					</li>
+					<li>
+						<span class="edu-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+						<span class="edu-name">Español</span>
+						<span class="edu-badge">Nativo</span>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<style>
+    .skills {
+        background: radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.08), transparent 55%),
+                    linear-gradient(135deg, rgba(12, 22, 40, 0.9), rgba(7, 13, 26, 0.9));
+    }
+
+    :global(.light-theme) .skills {
+        background: radial-gradient(circle at 15% 20%, rgba(2, 132, 199, 0.08), transparent 55%),
+                    linear-gradient(135deg, rgba(240, 244, 248, 0.9), rgba(226, 232, 240, 0.9));
+    }
+
+    /* BENTO GRID STRUCTURAL STYLES */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .bento-card {
+        background: linear-gradient(135deg, rgba(10, 20, 38, 0.85), rgba(7, 13, 24, 0.9));
+        border: 1px solid rgba(0, 212, 255, 0.16);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.25rem;
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bento-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 212, 255, 0.4);
+        box-shadow: var(--shadow-strong);
+    }
+
+    :global(.light-theme) .bento-card {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    .bento-hero {
+        grid-column: span 2;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(10, 20, 38, 0.92));
+        border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    :global(.light-theme) .bento-hero {
+        background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), rgba(255, 255, 255, 0.95));
+    }
+
+    .bento-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* ESTILOS DE ÍCONOS VECTORIALES BENTO */
+    .bento-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid rgba(0, 212, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+        flex-shrink: 0;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+    }
+
+    .bento-icon-wrapper.icon-pink {
+        background: rgba(255, 77, 141, 0.1);
+        border-color: rgba(255, 77, 141, 0.3);
+        color: #ff6ea8;
+        box-shadow: 0 0 15px rgba(255, 77, 141, 0.15);
+    }
+
+    .bento-svg-icon {
+        display: block;
+    }
+
+    .bento-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        margin: 0;
+    }
+
+    .bento-badge {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .bento-desc {
+        font-size: 0.95rem;
+        color: var(--color-text-secondary);
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .bento-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag {
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--color-text-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.25s ease;
+    }
+
+    .tag:hover {
+        transform: scale(1.04);
+        color: var(--color-text-primary);
+    }
+
+    .tag-accent {
+        background: rgba(0, 212, 255, 0.12);
+        color: var(--color-accent);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        box-shadow: 0 0 12px rgba(0, 212, 255, 0.15);
+    }
+
+    .bento-soft {
+        border-color: rgba(255, 77, 141, 0.25);
+    }
+
+    .bento-soft:hover {
+        border-color: rgba(255, 77, 141, 0.5);
+    }
+
+    .tag-pink {
+        background: rgba(255, 77, 141, 0.12);
+        color: #ff6ea8;
+        border: 1px solid rgba(255, 77, 141, 0.3);
+    }
+
+    /* EDUCACIÓN & OTROS */
+    .education {
+        background: radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.12), transparent 55%),
+                    linear-gradient(135deg, rgba(8, 16, 32, 0.95), rgba(10, 22, 45, 0.92));
+        color: var(--color-text-primary);
+    }
+
+    :global(.light-theme) .education {
+        background: radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.12), transparent 55%),
+                    linear-gradient(135deg, rgba(240, 244, 248, 0.95), rgba(226, 232, 240, 0.92));
+    }
+    
+    .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: clamp(1.5rem, 4vw, 2.5rem);
+        margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    
+    .education-category {
+        background: linear-gradient(135deg, rgba(10, 20, 36, 0.92), rgba(6, 14, 28, 0.94));
+        padding: clamp(1.5rem, 4vw, 2.25rem);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(0, 212, 255, 0.18);
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    :global(.light-theme) .education-category {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+    
+    .education-category:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-strong);
+    }
+    
+    .education-category .category-title {
+        color: var(--color-accent);
+        font-size: 1.35rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+    }
+
+    .edu-title-icon {
+        color: var(--color-accent);
+    }
+    
+    .education-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .education-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.2rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(0, 212, 255, 0.12);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    :global(.light-theme) .education-item {
+        background: rgba(0, 0, 0, 0.02);
+    }
+    
+    .education-item:hover {
+        border-color: rgba(0, 212, 255, 0.28);
+        transform: translateX(4px);
+    }
+    
+    .education-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+        flex-shrink: 0;
+    }
+
+    .education-icon.icon-pink {
+        background: rgba(255, 77, 141, 0.1);
+        border-color: rgba(255, 77, 141, 0.2);
+        color: #ff6ea8;
+    }
+    
+    .education-content {
+        flex: 1;
+    }
+    
+    .education-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text-primary);
+        margin-bottom: 0.3rem;
+    }
+    
+    .education-description {
+        color: var(--color-text-secondary);
+        line-height: 1.5;
+        margin: 0;
+        font-size: 0.92rem;
+    }
+    
+    .edu-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.6rem;
+    }
+
+    .edu-list li {
+        display: grid;
+        grid-template-columns: 28px 1fr auto;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 0.55rem 0.7rem;
+    }
+
+    :global(.light-theme) .edu-list li {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .edu-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+    }
+
+    .edu-name { font-size: 0.92rem; color: var(--color-text-primary); font-weight: 600; }
+
+    .edu-badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(0, 212, 255, 0.15);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        color: var(--color-accent);
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .edu-note {
+        margin: 0 0 0.85rem 0;
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+        background: linear-gradient(90deg, rgba(255, 110, 168, 0.12), rgba(0, 212, 255, 0.08));
+        border: 1px solid rgba(255, 110, 168, 0.25);
+        border-radius: 12px;
+        padding: 0.75rem 0.9rem;
+        text-align: justify;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+        .bento-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .bento-hero {
+            grid-column: span 2;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .bento-grid {
+            grid-template-columns: 1fr;
+        }
+        .bento-hero {
+            grid-column: span 1;
+        }
+        .education-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,323 @@
+---
+import FeaturedProject from './FeaturedProjectEN.astro';
+import ProjectGrid from '../ProjectGrid.astro';
+import type { Props as ProjectCardProps } from '../ProjectCard.astro';
+
+const resolve = (p: string) => import.meta.env.BASE_URL + p.replace(/^\//, '');
+
+const featuredProjects = [
+    {
+        title: "INNOVALAB - NEXA PROJECT (GCBA)",
+        challenge: "The core challenge was ensuring technical interoperability between virtual classrooms (LMS like Moodle) and new accessibility tools. It was necessary to evaluate main interaction flows and identify bottlenecks hindering the development team's progress.",
+        solution: "I documented and optimized the user's critical path by structuring detailed use cases, which unblocked operational development. This enabled the team to create an LTI panel with backend services, NoSQL databases (Firestore), and the Gemini API for AI-powered assisted reading and text simplification, achieving full alignment between UX/UI design and data architecture.",
+        technologies: ["AI Integration (Gemini)", "LTI Protocol", "Critical Path Analysis", "UX/UI & ERD", "Technical Support"],
+        imageUrl: resolve('/NEXA-presentacion.gif'), 
+        liveUrl: "https://docs.google.com/document/d/1I345L6LWy075HwAGpAGklrV-T6qhsGbm93g2jlckzEA/edit?usp=sharing",
+        demoUrl: "https://lti-accessibility-tool-front.onrender.com/",
+        articleUrl: "https://innovalab.bue.edu.ar/foro",
+    },
+    {
+        title: "CLÍNICA MOEBIUS",
+        challenge: "Unsecured desktop workstations operating via WiFi adapters. High risk of sensitive patient data leakage, lack of centralized backups, and generic email accounts.",
+        solution: "Engineered and deployed a secure corporate network topology, centralized data backup infrastructure, and executed a seamless domain migration to Google Workspace.",
+        technologies: ["Cisco Packet Tracer", "Network Infrastructure", "Windows Server", "Backup & DR", "Google Workspace"],
+        imageUrl: resolve('/clinica-moebius-diagram.png'), 
+        liveUrl: "https://docs.google.com/document/d/1MQqITA84_-x_X2HoTnLSEHvkwcXDtSPSh5g9zslBYG4/edit?usp=sharing",
+        githubUrl: undefined, 
+    },
+    {
+        title: "ESTUDIO CALVIÑO LAW FIRM",
+        challenge: "Legacy property management system was obsolete, requiring database refactoring and financial business logic integration (CPI/ICL inflation adjustments and delinquency calculators).",
+        solution: "Led technical refactoring of the legacy PHP/MySQL codebase into a modern, scalable architecture while providing hybrid ongoing infrastructure and software support.",
+        technologies: ["PHP", "MySQL", "Architectural Refactoring", "Backup & DR", "Hardware Solutions"],
+        liveUrl: "https://docs.google.com/document/d/1Hbur7N9btqw7eZn00tUFZpcWapCCv9DMmDVGQSQjCkc/edit?usp=sharing",
+        imageUrl: resolve('/uml_02_diagrama_de_clases.png'), 
+    },
+];
+
+const secondaryProjects: ProjectCardProps[] = [
+    {
+        title: "MINA INFORMÁTICA",
+        description: "Full Stack development and digital presence management for my IT Infrastructure & Consulting firm.",
+        technologies: ["Astro", "Tailwind CSS", "JavaScript", "SEO", "Cloudflare", "GCP"],
+        imageUrl: resolve('/mina-informatica.png'),
+        liveUrl: "https://minainformatica.com",
+        githubUrl: "",
+    },
+    {
+        title: "B POLYGLOT TIMER",
+        description: "Web application engineered for language exchange communities featuring interactive timer logic and pairing rules.",
+        technologies: ["React", "Vite", "Styled Components", "State Management"],
+        imageUrl: resolve('/brice-timer.png'),
+        liveUrl: "https://minainformatica.com/languagetimer",
+        githubUrl: "https://github.com/tu-usuario/brice-language-timer",
+    },
+    {
+        title: "MeshCentral",
+        description: "Google Cloud Engine deployment of MeshCentral for enterprise out-of-band remote administration (Intel AMT), custom firewall policies, and HTTPS encryption.",
+        technologies: ["Google Cloud Engine", "VM", "HTTPS", "Firewall", "MeshCentral", "Cloudflare"],
+        imageUrl: resolve('/meshcentral.png'),
+        liveUrl: "",
+        githubUrl: "https://www.meshcommander.com/meshcommander/mesh-commander-screens",
+    },
+];
+---
+
+<section class="portfolio-showcase">
+    <div class="showcase-header">
+        <h2 class="section-title">Key Infrastructure & Systems Projects</h2>
+        <p class="section-subtitle">Core engineering projects focused on critical systems, network security, and architectural refactoring.</p>
+    </div>
+    
+    <div class="featured-list">
+        {featuredProjects.map((project) => (
+            <FeaturedProject {...project} />
+        ))}
+    </div>
+
+    <div class="showcase-header">
+        <h2 class="section-title">Web Development & Additional Projects</h2>
+        <p class="section-subtitle">Applications and platforms demonstrating continuous technical evolution and community building.</p>
+    </div>
+    
+    <ProjectGrid projects={secondaryProjects} />
+</section>
+
+<!-- Lightbox to view images at full size with zoom without scroll -->
+<div id="imageLightbox" class="lightbox" aria-hidden="true" hidden>
+    <div class="lightbox-backdrop" data-close></div>
+    <figure class="lightbox-frame">
+        <div class="lightbox-viewport">
+            <img id="lightboxImage" class="lightbox-image" alt="Project image" />
+        </div>
+        <figcaption class="lightbox-caption"></figcaption>
+        <button class="lightbox-close" type="button" aria-label="Close" data-close>×</button>
+    </figure>
+</div>
+
+<style>
+    .portfolio-showcase { width: min(92%, 1100px); margin: 0 auto; display: flex; flex-direction: column; gap: clamp(2rem, 6vw, 3rem); }
+    .showcase-header { text-align: center; display: flex; flex-direction: column; gap: 0.75rem; }
+    .section-subtitle { max-width: 46rem; margin: 0 auto; text-align: justify; }
+
+    .showcase-header .section-title {
+        text-align: justify;
+        max-width: 46rem;
+        margin: 0 auto;
+    }
+
+    .featured-list { display: flex; flex-direction: column; gap: clamp(2rem, 5vw, 2.75rem); }
+
+    /* Lightbox */
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+    }
+    .lightbox[hidden] { display: none; }
+
+    .lightbox-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.75);
+        backdrop-filter: blur(2px);
+    }
+    .lightbox-frame {
+        position: relative;
+        max-width: 96vw;
+        max-height: 96vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        gap: 0.5rem;
+    }
+    .lightbox-viewport {
+         width: min(96vw, 1200px);
+         height: min(86vh, 800px);
+         overflow: hidden; /* no scrollbars */
+         display: grid;
+         place-items: center;
+         border-radius: 10px;
+         background: rgba(0,0,0,0.15);
+    }
+    .lightbox-image {
+        display: block;               /* force paint */
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto;
+        height: auto;
+        object-fit: contain;           /* fully visible on open */
+        image-rendering: auto;         /* large pngs */
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        border-radius: 8px;
+        transition: transform 0.15s ease-out;
+        transform: translate3d(0,0,0) scale(1);
+        cursor: zoom-in;
+        will-change: transform;
+    }
+    .lightbox-close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.3);
+        cursor: pointer;
+        font-size: 20px;
+        display: grid;
+        place-items: center;
+        backdrop-filter: blur(3px);
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+</style>
+
+<script>
+    // @ts-nocheck
+    document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('imageLightbox');
+        const img = document.getElementById('lightboxImage');
+        const caption = document.querySelector('.lightbox-caption');
+        const viewport = document.querySelector('.lightbox-viewport');
+
+        if (!(lightbox instanceof HTMLElement) || !(img instanceof HTMLImageElement) || !(viewport instanceof HTMLElement)) return;
+
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        const minScale = 1;
+        const maxScale = 4;
+        let isDragging = false;
+        let startX = 0, startY = 0;
+
+        function applyTransform() {
+            img.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
+            img.style.cursor = scale === 1 ? 'zoom-in' : 'grab';
+        }
+
+        function resetTransform() {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            applyTransform();
+        }
+
+        /**
+         * @param {string} src
+         * @param {string} [alt]
+         */
+        function openLightbox(src, alt) {
+            img.src = src;
+            resetTransform();
+            if (caption) caption.textContent = alt || '';
+            lightbox.hidden = false;
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeLightbox() {
+            img.src = '';
+            lightbox.hidden = true;
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Open from any zoomable image ONLY in featured-list
+        document.addEventListener('click', (ev) => {
+            const target = ev.target;
+            if (target instanceof HTMLImageElement && target.classList.contains('zoomable')) {
+                // Only if the image belongs to the featured block
+                if (!target.closest('.featured-list')) return;
+                ev.preventDefault();
+                const full = target.getAttribute('data-full') || target.currentSrc || target.src;
+                // Preload to avoid overlay without image
+                const test = new Image();
+                test.onload = () => openLightbox(full, target.alt);
+                test.onerror = () => window.open(full, '_blank');
+                test.src = full;
+            }
+            if ((target instanceof HTMLElement) && target.hasAttribute('data-close')) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard: Enter/Space opens
+        document.addEventListener('keydown', (ev) => {
+            const active = document.activeElement;
+            if ((ev.key === 'Enter' || ev.key === ' ') && active instanceof HTMLImageElement && active.classList.contains('zoomable')) {
+                if (!active.closest('.featured-list')) return;
+                ev.preventDefault();
+                const full = active.getAttribute('data-full') || active.currentSrc || active.src;
+                const test = new Image();
+                test.onload = () => openLightbox(full, active.alt);
+                test.onerror = () => window.open(full, '_blank');
+                test.src = full;
+            }
+        });
+
+        // Close with ESC
+        document.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Escape' && !lightbox.hidden) closeLightbox();
+        });
+
+        // Click to toggle 1x/2x centered zoom
+        img.addEventListener('click', () => {
+            if (scale === 1) {
+                scale = 2;
+            } else {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+            }
+            applyTransform();
+        });
+
+        // Zoom with mouse wheel (no scroll, centered)
+        viewport.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = Math.sign(e.deltaY);
+            const factor = -delta * 0.2; // sensitivity
+            scale = Math.min(maxScale, Math.max(minScale, scale + factor));
+            applyTransform();
+        }, { passive: false });
+
+        // Drag to pan when zoomed
+        viewport.addEventListener('mousedown', (e) => {
+            if (scale === 1) return;
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            img.style.cursor = 'grabbing';
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            applyTransform();
+        });
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            img.style.cursor = 'grab';
+        });
+
+        // Basic touch support: double tap to toggle zoom
+        let lastTap = 0;
+        viewport.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTap < 300) {
+                // double tap
+                if (scale === 1) scale = 2; else { scale = 1; translateX = 0; translateY = 0; }
+                applyTransform();
+            }
+            lastTap = now;
+        });
+    });
+</script>

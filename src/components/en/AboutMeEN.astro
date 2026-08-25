@@ -1,0 +1,636 @@
+---
+// About Me component EN
+---
+
+<section class="about">
+    <div class="container">
+        <div class="about-content surface-card">
+            <div class="about-media">
+                <div class="photo-carousel surface-card" role="region" aria-label="Jacquelina's work photo gallery">
+					
+					<!-- HUD HEADER: IT Interface Elements -->
+					<div class="carousel-hud-top">
+						<span class="status-dot"></span>
+						<span class="status-text">SYS.ADMIN_NODE // ACTIVE</span>
+					</div>
+
+					<!-- Corner Brackets -->
+					<div class="bracket top-left"></div>
+					<div class="bracket top-right"></div>
+					<div class="bracket bottom-left"></div>
+					<div class="bracket bottom-right"></div>
+
+					<div class="carousel-container">
+						<!-- Scanline Overlay -->
+						<div class="scanline-overlay"></div>
+						
+						<div class="photo-slide active" data-index="0" role="group" aria-hidden="false"><img src="/Trabajando-En-Servidor-Pyme.JPG" alt="Jacqueline Valenzuela working" class="work-photo" /></div>
+						<div class="photo-slide" data-index="1" role="group" aria-hidden="true"><img src="/Trabajando-En-Soporte-Tecnico.jpg" alt="Jacqueline Valenzuela working" class="work-photo" /></div>
+						<div class="photo-slide" data-index="2" role="group" aria-hidden="true"><img src="/Sala-VC-Cliente-Empresa.jpg" alt="Jacqueline Valenzuela working" class="work-photo" /></div>
+						<div class="photo-slide" data-index="3" role="group" aria-hidden="true"><img src="/Inicios-En-Programacion.jpg" alt="Jacqueline Valenzuela working" class="work-photo" /></div>
+						<div class="photo-slide" data-index="4" role="group" aria-hidden="true"><img src="/soporte.JPG" alt="Tech support" class="work-photo" /></div>
+						<div class="photo-slide" data-index="5" role="group" aria-hidden="true"><img src="/reparacion.jpg" alt="Hardware repair" class="work-photo" /></div>
+						<div class="photo-slide" data-index="6" role="group" aria-hidden="true"><img src="/mantenimiento.jpg" alt="Preventive maintenance" class="work-photo" /></div>
+						<div class="photo-slide" data-index="7" role="group" aria-hidden="true"><img src="/equipo_pmp.JPG" alt="PMP Project team" class="work-photo" /></div>
+					</div>
+
+					<div class="carousel-controls">
+						<button class="carousel-btn prev-btn" type="button" data-direction="-1" aria-label="View previous photo">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"></polyline></svg>
+						</button>
+						<button class="carousel-btn next-btn" type="button" data-direction="1" aria-label="View next photo">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"></polyline></svg>
+						</button>
+					</div>
+
+					<!-- DATA BARS (Replaces dots) -->
+					<div class="carousel-dots" role="tablist">
+						<span class="dot active" role="tab" tabindex="0" aria-label="View photo 1" aria-current="true" data-target="0"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 2" data-target="1"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 3" data-target="2"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 4" data-target="3"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 5" data-target="4"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 6" data-target="5"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 7" data-target="6"></span>
+						<span class="dot" role="tab" tabindex="-1" aria-label="View photo 8" data-target="7"></span>
+					</div>
+				</div>
+			</div>
+            <div class="about-top">
+                <h2 class="section-title about-title">About Me</h2>
+				<p class="about-description about-description--primary">
+					With <strong>over 15 years</strong> managing <strong>mission-critical IT environments</strong> (<strong>Virtualization, Linux, Windows Server, Cloud</strong>), my focus goes beyond standard documentation. This deep background provides a fundamental edge in <strong>security, scalability, and operational reliability</strong>.
+				</p>
+            </div>
+            <div class="about-bottom">
+				<p class="about-description about-description--secondary">
+					I consider myself an <strong>autonomously driven problem-solver</strong>. Whether resolving critical network outages under strict SLAs, architecting tailored SME infrastructure through my firm <strong>MINA INFORMÁTICA</strong>, or refactoring core software systems, I approach every challenge with pragmatism and analytical rigor. My commitment to <strong>continuous learning</strong> is what allows me to <strong>deliver certainty where others see complexity</strong>.
+				</p>
+            </div>
+            <div class="about-stats">
+				<div class="stat">
+					<span class="stat-number">15+</span>
+					<span class="stat-label">Years of Experience</span>
+				</div>
+				<div class="stat">
+					<span class="stat-number">20+</span>
+					<span class="stat-label">Completed Projects</span>
+				</div>
+				<div class="stat">
+					<span class="stat-number">15+</span>
+					<span class="stat-label">Technologies Mastered</span>
+				</div>
+			</div>
+        </div>
+	</div>
+</section>
+
+<style>
+    .about {
+        color: var(--color-text-primary);
+    }
+    
+    .about-content {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr);
+        grid-template-areas:
+            "media top"
+            "bottom bottom"
+            "stats stats";
+        gap: clamp(1rem, 2.5vw, 1.75rem);
+        align-items: center;
+        padding: clamp(1.25rem, 3vw, 2.1rem);
+        background: linear-gradient(135deg, rgba(16, 26, 44, 0.9), rgba(10, 20, 38, 0.92));
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(0, 212, 255, 0.1);
+        backdrop-filter: blur(16px);
+    }
+    
+    .about-media {
+        grid-area: media;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about-top {
+        grid-area: top;
+        align-self: start;
+    }
+    
+    .about-bottom {
+        grid-area: bottom;
+        max-width: 52ch;
+        margin-top: clamp(0.25rem, 1.4vw, 0.75rem);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .about-title {
+        margin-bottom: 0.65rem;
+        text-align: left;
+    }
+    
+    .about-description {
+        font-size: clamp(0.95rem, 2vw, 1rem);
+        line-height: 1.48;
+        color: var(--color-text-secondary);
+        margin-bottom: 0.55rem;
+        text-align: justify;
+    }
+    
+    .about-description--primary {
+        margin-bottom: clamp(0.65rem, 2vw, 1rem);
+    }
+    
+    .about-description--secondary {
+        margin-bottom: clamp(0.1rem, 0.8vw, 0.45rem);
+        text-align: justify;
+    }
+    
+    .about-stats {
+        grid-area: stats;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: clamp(1.25rem, 3vw, 2rem);
+        flex-wrap: wrap;
+        margin-top: clamp(0.25rem, 1vw, 0.6rem);
+    }
+    
+    .stat {
+        text-align: center;
+        padding: 1rem;
+        border-radius: var(--radius-sm);
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(0, 212, 255, 0.1);
+        box-shadow: 0 10px 24px rgba(0, 212, 255, 0.08);
+        min-width: 160px;
+    }
+    
+    .stat-number {
+        display: block;
+        font-size: clamp(1.8rem, 4.5vw, 2.3rem);
+        font-weight: 800;
+        color: var(--color-accent);
+        margin-bottom: 0.4rem;
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.45);
+    }
+    
+    .stat-label {
+        font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+        color: var(--color-muted);
+        font-weight: 500;
+    }
+    
+/* --- START IT CAROUSEL STYLES --- */
+    .about-media .photo-carousel {
+        position: relative;
+        width: 330px;
+        height: 350px;
+        margin: 0 auto;
+        padding: 1.8rem 0.6rem 0.6rem 0.6rem;
+        border-radius: 4px; /* Straighter edges, more hardware-like */
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        box-shadow: 0 0 25px rgba(0, 212, 255, 0.05), inset 0 0 15px rgba(0, 212, 255, 0.1);
+        background: linear-gradient(135deg, rgba(4, 10, 20, 0.95), rgba(12, 24, 46, 0.98));
+    }
+
+    /* HUD Top Bar */
+    .carousel-hud-top {
+        position: absolute;
+        top: 8px;
+        left: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.7rem;
+        color: var(--color-accent);
+        letter-spacing: 1px;
+        z-index: 10;
+    }
+
+    .status-dot {
+        width: 6px;
+        height: 6px;
+        background-color: #00ff00;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #00ff00;
+        animation: serverBlink 2s infinite;
+    }
+
+    @keyframes serverBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+
+    /* Hardware Brackets (Corners) */
+    .bracket {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border: 2px solid rgba(0, 212, 255, 0.5);
+        z-index: 5;
+    }
+    .top-left { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .top-right { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+    .bottom-left { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+    .bottom-right { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 22px);
+        overflow: hidden;
+        border-radius: 2px;
+        border: 1px solid rgba(0, 212, 255, 0.15);
+    }
+    
+    /* Scanline Effect over the image */
+    .scanline-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0, 212, 255, 0.05) 50%, rgba(0, 212, 255, 0.05));
+        background-size: 100% 4px;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .photo-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .photo-slide.active {
+        opacity: 1;
+    }
+    
+    /* Image with Cyber/Server Filter */
+    .work-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left center;
+        filter: grayscale(30%) sepia(20%) hue-rotate(180deg) brightness(0.9) contrast(1.1);
+        transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    
+    /* On hover, reveal the original full-color image */
+    .carousel-container:hover .work-photo {
+        filter: grayscale(0%) sepia(0%) hue-rotate(0deg) brightness(1) contrast(1);
+        transform: scale(1.03);
+    }
+    
+    .carousel-controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 10;
+    }
+    
+    .carousel-btn {
+        background: rgba(4, 10, 20, 0.6);
+        border: 1px solid rgba(0, 212, 255, 0.4);
+        border-radius: 4px; /* More square/technical shape */
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: all;
+        color: var(--color-accent);
+        backdrop-filter: blur(4px);
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(0, 212, 255, 0.2);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        color: #fff;
+    }
+    
+    .prev-btn { margin-left: -15px; }
+    .next-btn { margin-right: -15px; }
+    
+    /* Dots converted to Data-Bars */
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 14px;
+        z-index: 10;
+        position: relative;
+    }
+    
+    .dot {
+        width: 18px;
+        height: 3px;
+        border-radius: 1px;
+        background: rgba(0, 212, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+    }
+
+    .dot.active {
+        background: var(--color-accent);
+        width: 28px;
+        box-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+    }
+
+    .dot:hover { background: rgba(0, 212, 255, 0.6); }
+
+    .photo-slide:nth-child(4) .work-photo {
+        object-position: 12% 45%;
+        transform: scale(0.92);
+    }
+
+    .photo-slide:nth-child(5) .work-photo,
+    .photo-slide:nth-child(6) .work-photo,
+    .photo-slide:nth-child(7) .work-photo,
+    .photo-slide:nth-child(8) .work-photo {
+        object-position: center;
+    }
+    /* --- END IT CAROUSEL STYLES --- */
+    
+    @media (max-width: 1024px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "top"
+                "media"
+                "bottom"
+                "stats";
+            text-align: center;
+            padding: clamp(1.25rem, 4.5vw, 2rem);
+            gap: clamp(1.15rem, 4vw, 1.8rem);
+        }
+
+        .about-title {
+            text-align: center;
+            margin-bottom: clamp(0.85rem, 3vw, 1.2rem);
+        }
+
+        .about-top, .about-bottom {
+            margin-inline: auto;
+            max-width: 60ch;
+        }
+
+        .about-media {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .about-content {
+            gap: 1.5rem;
+            padding: clamp(1.35rem, 6.5vw, 2.2rem);
+        }
+ 
+        .about-title {
+            font-size: clamp(1.85rem, 7vw, 2.2rem);
+            margin-bottom: 0.55rem;
+        }
+
+        .about-description {
+            font-size: clamp(0.9rem, 3.2vw, 0.98rem);
+            line-height: 1.5;
+        }
+
+        .about-description--primary {
+            margin-bottom: clamp(0.4rem, 2vw, 0.75rem);
+        }
+
+        .about-description--secondary {
+            margin-bottom: clamp(0.1rem, 1vw, 0.4rem);
+        }
+
+        .about-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: center;
+        }
+ 
+        .about-media .photo-carousel {
+            width: 250px;
+            height: 250px;
+            padding: 0.55rem;
+        }
+ 
+        .stat {
+            min-width: auto;
+            width: min(320px, 100%);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.6rem;
+            align-items: center;
+            text-align: left;
+            padding: 0.75rem;
+        }
+ 
+        .stat-number {
+            justify-self: start;
+            font-size: clamp(1.6rem, 6vw, 1.9rem);
+        }
+ 
+        .stat-label {
+            justify-self: start;
+            font-size: clamp(0.8rem, 3vw, 0.95rem);
+        }
+    }
+
+    .photo-slide:nth-child(4) .work-photo {
+        object-position: 12% 45%;
+        transform: scale(0.92);
+    }
+
+    .photo-slide:nth-child(5) .work-photo,
+    .photo-slide:nth-child(6) .work-photo,
+    .photo-slide:nth-child(7) .work-photo,
+    .photo-slide:nth-child(8) .work-photo {
+        object-position: center;
+    }
+</style>
+
+<script>
+// @ts-nocheck
+	let currentSlideIndex = 0;
+	let autoPlayInterval = 0;
+	let resumeTimeout = 0;
+	let isUserInteracting = false;
+	let cycleCount = 0;
+	const totalCycles = 2;
+	let isAutoPlayActive = true;
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		const slides = Array.from(document.querySelectorAll('.photo-slide'));
+		const dots = Array.from(document.querySelectorAll('.dot'));
+		const controls = Array.from(document.querySelectorAll('.carousel-btn'));
+		const carousel = document.querySelector('.photo-carousel');
+
+		if (slides.length === 0 || dots.length === 0 || !carousel) {
+			return;
+		}
+
+		const totalSlides = slides.length;
+
+		/**
+		 * @param {number} index
+		 * @returns {void}
+		 */
+		const setActiveSlide = (index) => {
+			slides.forEach((slide, slideIndex) => {
+				const isActive = slideIndex === index;
+				slide.classList.toggle('active', isActive);
+				slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+			});
+
+			dots.forEach((dot, dotIndex) => {
+				const isActive = dotIndex === index;
+				dot.classList.toggle('active', isActive);
+
+				if (isActive) {
+					dot.setAttribute('aria-current', 'true');
+					dot.setAttribute('tabindex', '0');
+				} else {
+					dot.removeAttribute('aria-current');
+					dot.setAttribute('tabindex', '-1');
+				}
+			});
+		};
+
+		/**
+		 * @param {number} index
+		 * @returns {void}
+		 */
+		const goToSlide = (index) => {
+			currentSlideIndex = (index + totalSlides) % totalSlides;
+			setActiveSlide(currentSlideIndex);
+		};
+
+		/**
+		 * @param {number} direction
+		 * @returns {void}
+		 */
+		const changeSlide = (direction) => {
+			const previousIndex = currentSlideIndex;
+			goToSlide(previousIndex + direction);
+
+			if (direction > 0 && previousIndex === totalSlides - 1) {
+				cycleCount += 1;
+
+				if (cycleCount >= totalCycles && isAutoPlayActive) {
+					stopAutoPlay();
+					goToSlide(0);
+				}
+			}
+		};
+
+		function clearTimers() {
+			if (autoPlayInterval !== 0) {
+				window.clearInterval(autoPlayInterval);
+				autoPlayInterval = 0;
+			}
+
+			if (resumeTimeout !== 0) {
+				window.clearTimeout(resumeTimeout);
+				resumeTimeout = 0;
+			}
+		}
+
+		function startAutoPlay() {
+			if (!isAutoPlayActive || isUserInteracting || autoPlayInterval !== 0) {
+				return;
+			}
+
+			autoPlayInterval = window.setInterval(() => {
+				if (!isUserInteracting) {
+					changeSlide(1);
+				}
+			}, 6000);
+		}
+
+		function pauseAutoPlay() {
+			isUserInteracting = true;
+			clearTimers();
+
+			resumeTimeout = window.setTimeout(() => {
+				if (isAutoPlayActive) {
+					isUserInteracting = false;
+					startAutoPlay();
+				}
+			}, 10000);
+		}
+
+		function stopAutoPlay() {
+			isAutoPlayActive = false;
+			clearTimers();
+		}
+
+		controls.forEach((button) => {
+			button.addEventListener('click', () => {
+				const directionAttr = button.getAttribute('data-direction');
+				const direction = directionAttr ? Number(directionAttr) : 0;
+
+				if (!Number.isNaN(direction) && direction !== 0) {
+					changeSlide(direction);
+					pauseAutoPlay();
+				}
+			});
+		});
+
+		dots.forEach((dot) => {
+			dot.addEventListener('click', () => {
+				const targetAttr = dot.getAttribute('data-target');
+				const target = targetAttr ? Number(targetAttr) : NaN;
+
+				if (!Number.isNaN(target)) {
+					goToSlide(target);
+					pauseAutoPlay();
+				}
+			});
+
+			dot.addEventListener('keydown', (event) => {
+				if (!(event instanceof KeyboardEvent)) {
+					return;
+				}
+
+				if (event.key === 'Enter' || event.key === ' ') {
+					event.preventDefault();
+					const targetAttr = dot.getAttribute('data-target');
+					const target = targetAttr ? Number(targetAttr) : NaN;
+
+					if (!Number.isNaN(target)) {
+						goToSlide(target);
+						pauseAutoPlay();
+					}
+				}
+			});
+		});
+
+		carousel.addEventListener('mouseenter', () => {
+			pauseAutoPlay();
+		});
+
+		carousel.addEventListener('mouseleave', () => {
+			if (isAutoPlayActive) {
+				isUserInteracting = false;
+				startAutoPlay();
+			}
+		});
+
+		setActiveSlide(currentSlideIndex);
+		startAutoPlay();
+	});
+</script>

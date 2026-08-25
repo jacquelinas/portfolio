@@ -1,0 +1,352 @@
+---
+// 1. Importa los dos tipos de componentes de proyecto
+import FeaturedProject from './FeaturedProject.astro';
+import ProjectGrid from './ProjectGrid.astro';
+import type { Props as ProjectCardProps } from './ProjectCard.astro';
+
+// Normaliza rutas de imágenes respecto al BASE_URL (soporta despliegues en subcarpetas)
+const resolve = (p: string) => import.meta.env.BASE_URL + p.replace(/^\//, '');
+
+// 2. Define los Proyectos Clave (con desafío y solución)
+const featuredProjects = [
+    {
+        title: "INNOVALAB - PROYECTO NEXA (GCBA)",
+        desafio: "El reto central fue asegurar la interoperabilidad técnica entre aulas virtuales (LMS como Moodle) y nuevas herramientas de accesibilidad. Fue necesario evaluar los flujos principales de interacción e identificar cuellos de botella que afectaban el avance del equipo de desarrollo.",
+        solucion: "Documenté y optimicé el camino crítico del usuario (critical path) estructurando casos de uso detallados que destrabaron el desarrollo operativo. Con esto el equipo pudo crear un panel LTI con servicios backend, bases de datos NoSQL (Firestore) y la API de Gemini para funciones de lectura asistida y simplificación de textos con IA, logrando una alineación total entre el diseño UX/UI y la arquitectura de datos.",
+        technologies: ["Integración IA (Gemini)", "Protocolo LTI", "Análisis Critical Path", "UX/UI & DER", "Soporte Técnico"],
+        imageUrl: resolve('/NEXA-presentacion.gif'), 
+        liveUrl: "https://docs.google.com/document/d/1I345L6LWy075HwAGpAGklrV-T6qhsGbm93g2jlckzEA/edit?usp=sharing", // Botón: Documentación
+        demoUrl: "https://lti-accessibility-tool-front.onrender.com/", // Botón: Ver App
+        articleUrl: "https://innovalab.bue.edu.ar/foro", // Botón: Nota Oficial GCBA
+    },
+    {
+        title: "CLÍNICA MOEBIUS",
+        desafio: "Equipos de escritorio conectados a internet con receptores WiFi. Red insegura, riesgo de perdida de datos sensibles, información no centralizada y correos genéricos en lugar de un dominio de empresa.",
+        solucion: `Se implementó un diseño de red seguro (simulado en Packet Tracer), se centralizó la información y se migraron los servicios de correo a un dominio profesional, mejorando la seguridad y la imagen corporativa.`,
+        technologies: ["Cisco Packet Tracer",  "Infraestructura de Red", "Microsoft Server", "Backup Solutions", "Seguridad de Red", "De Gmail a Workspace"],
+        imageUrl: resolve('/clinica-moebius-diagram.png'), 
+        liveUrl: "https://docs.google.com/document/d/1MQqITA84_-x_X2HoTnLSEHvkwcXDtSPSh5g9zslBYG4/edit?usp=sharing",
+        githubUrl: undefined, 
+    },
+    {
+        title: "ESTUDIO CALVIÑO ABOGADOS",
+        desafio: `Sistema de administración de propiedades obsoleto.
+                  Requería integrar nuevos campos (email, n° cliente) y lógicas de negocio (cálculo de mora ICL/IPC, archivado).`,
+        solucion: "Refactorización del sistema PHP existente, modernizando la base de datos y la aplicación para incluir las nuevas funcionalidades. Se brinda soporte técnico híbrido (remoto y presencial) para la operación continua.",
+        technologies: ["PHP", "MySQL", "Soporte Técnico", "Backup Solutions", "Soluciones de Hardware",],
+        liveUrl: "https://docs.google.com/document/d/1Hbur7N9btqw7eZn00tUFZpcWapCCv9DMmDVGQSQjCkc/edit?usp=sharing",
+        imageUrl: resolve('/uml_02_diagrama_de_clases.png'), 
+    },
+];
+
+// 3. Define los Proyectos Secundarios (reusando la data anterior) [cite: 23, 25, 26]
+const secondaryProjects: ProjectCardProps[] = [
+    {
+        title: "MINA INFORMÁTICA",
+        description: `Desarrollo y mantenimiento web para mi organización de Soporte Técnico. Foco en presencia online y servicios.`,
+        technologies: ["Astro", "Tailwind CSS", "JavaScript", "SEO","Firebase","Cloudflare","GitHub","Google Cloud CLI",],
+        imageUrl: resolve('/mina-informatica.png'),
+        liveUrl: "https://minainformatica.com",
+        githubUrl: "",
+    },
+    {
+        title: "B POLYGLOT TIMER",
+        description: `Herramienta web para la comunidad de aprendizaje de idiomas. Funcionalidad de temporizador con reglas específicas.`,
+        technologies: ["React", "Vite", "Styled Components", "State Management"],
+        imageUrl: resolve('/brice-timer.png'),
+        liveUrl: "https://minainformatica.com/languagetimer",
+        githubUrl: "https://github.com/tu-usuario/brice-language-timer",
+    },
+    {
+        title: "MeshCentral",
+        description: `Despliegue de aplicación web en Google Cloud para administración remota (Intel AMT). Configuración de instancia, seguridad (HTTPS), reglas de firewall y puesta en marcha del servicio MeshCentral.`,
+        technologies: ["Google Cloud CLI", "VM", "HTTPS", "Firewall", "MeshCentral","Cloudflare"],
+        imageUrl: resolve('/meshcentral.png'),
+        liveUrl: "https://minainformatica.online/",
+        githubUrl: "https://www.meshcommander.com/meshcommander/mesh-commander-screens",
+    },
+];
+---
+
+<section class="portfolio-showcase">
+    
+    <div class="showcase-header">
+        <h2 class="section-title">Proyectos Clave de Infraestructura y Sistemas</h2>
+        <p class="section-subtitle">Mi experiencia principal en la resolución de problemas de sistemas críticos y seguridad.</p>
+    </div>
+    
+    <div class="featured-list">
+        {featuredProjects.map((project) => (
+            <FeaturedProject {...project} />
+        ))}
+    </div>
+
+    <div class="showcase-header">
+        <h2 class="section-title">Desarrollo Web y Proyectos Adicionales</h2>
+        <p class="section-subtitle">Aplicaciones y sitios web que demuestran mi compromiso con la educación continua.</p>
+    </div>
+    
+    <ProjectGrid projects={secondaryProjects} />
+
+
+</section>
+
+<!-- Lightbox para ver imágenes a tamaño real con zoom sin scroll -->
+<div id="imageLightbox" class="lightbox" aria-hidden="true" hidden>
+    <div class="lightbox-backdrop" data-close></div>
+    <figure class="lightbox-frame">
+        <div class="lightbox-viewport">
+            <img id="lightboxImage" class="lightbox-image" alt="Imagen del proyecto" />
+        </div>
+        <figcaption class="lightbox-caption"></figcaption>
+        <button class="lightbox-close" type="button" aria-label="Cerrar" data-close>×</button>
+    </figure>
+</div>
+
+<style>
+    .portfolio-showcase {
+        width: min(92%, 1100px);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 6vw, 3rem);
+    }
+
+    .showcase-header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .section-subtitle {
+        max-width: 46rem;
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    .showcase-header .section-title {
+        text-align: justify;
+        max-width: 46rem;
+        margin: 0 auto;
+    }
+
+    .featured-list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 5vw, 2.75rem);
+    }
+
+    /* Lightbox */
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+    }
+    .lightbox[hidden] { display: none; }
+
+    .lightbox-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.75);
+        backdrop-filter: blur(2px);
+    }
+    .lightbox-frame {
+        position: relative;
+        max-width: 96vw;
+        max-height: 96vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        gap: 0.5rem;
+    }
+    .lightbox-viewport {
+         width: min(96vw, 1200px);
+         height: min(86vh, 800px);
+         overflow: hidden; /* sin barras */
+         display: grid;
+         place-items: center;
+         border-radius: 10px;
+         background: rgba(0,0,0,0.15);
+    }
+    .lightbox-image {
+        display: block;               /* fuerza pintura */
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto;
+        height: auto;
+        object-fit: contain;           /* se ve completa al abrir */
+        image-rendering: auto;         /* png grandes */
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        border-radius: 8px;
+        transition: transform 0.15s ease-out;
+        transform: translate3d(0,0,0) scale(1);
+        cursor: zoom-in;
+        will-change: transform;
+    }
+    .lightbox-close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.3);
+        cursor: pointer;
+        font-size: 20px;
+        display: grid;
+        place-items: center;
+        backdrop-filter: blur(3px);
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+</style>
+
+<script>
+    // @ts-nocheck
+    document.addEventListener('DOMContentLoaded', () => {
+        const lightbox = document.getElementById('imageLightbox');
+        const img = document.getElementById('lightboxImage');
+        const caption = document.querySelector('.lightbox-caption');
+        const viewport = document.querySelector('.lightbox-viewport');
+
+        if (!(lightbox instanceof HTMLElement) || !(img instanceof HTMLImageElement) || !(viewport instanceof HTMLElement)) return;
+
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        const minScale = 1;
+        const maxScale = 4;
+        let isDragging = false;
+        let startX = 0, startY = 0;
+
+        function applyTransform() {
+            img.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
+            img.style.cursor = scale === 1 ? 'zoom-in' : 'grab';
+        }
+
+        function resetTransform() {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            applyTransform();
+        }
+
+        /**
+         * @param {string} src
+         * @param {string} [alt]
+         */
+        function openLightbox(src, alt) {
+            img.src = src;
+            resetTransform();
+            if (caption) caption.textContent = alt || '';
+            lightbox.hidden = false;
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeLightbox() {
+            img.src = '';
+            lightbox.hidden = true;
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Apertura desde cualquier imagen zoomable SOLO en featured-list
+        document.addEventListener('click', (ev) => {
+            const target = ev.target;
+            if (target instanceof HTMLImageElement && target.classList.contains('zoomable')) {
+                // Solo si la imagen pertenece al bloque de destacados
+                if (!target.closest('.featured-list')) return;
+                ev.preventDefault();
+                const full = target.getAttribute('data-full') || target.currentSrc || target.src;
+                // Preload para evitar overlay sin imagen
+                const test = new Image();
+                test.onload = () => openLightbox(full, target.alt);
+                test.onerror = () => window.open(full, '_blank');
+                test.src = full;
+            }
+            if ((target instanceof HTMLElement) && target.hasAttribute('data-close')) {
+                closeLightbox();
+            }
+        });
+
+        // Teclado: Enter/Espacio abre
+        document.addEventListener('keydown', (ev) => {
+            const active = document.activeElement;
+            if ((ev.key === 'Enter' || ev.key === ' ') && active instanceof HTMLImageElement && active.classList.contains('zoomable')) {
+                if (!active.closest('.featured-list')) return;
+                ev.preventDefault();
+                const full = active.getAttribute('data-full') || active.currentSrc || active.src;
+                const test = new Image();
+                test.onload = () => openLightbox(full, active.alt);
+                test.onerror = () => window.open(full, '_blank');
+                test.src = full;
+            }
+        });
+
+        // Cerrar con ESC
+        document.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Escape' && !lightbox.hidden) closeLightbox();
+        });
+
+        // Click para alternar zoom 1x/2x centrado
+        img.addEventListener('click', () => {
+            if (scale === 1) {
+                scale = 2;
+            } else {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+            }
+            applyTransform();
+        });
+
+        // Zoom con rueda del ratón (sin scroll, centrado)
+        viewport.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = Math.sign(e.deltaY);
+            const factor = -delta * 0.2; // sensibilidad
+            scale = Math.min(maxScale, Math.max(minScale, scale + factor));
+            applyTransform();
+        }, { passive: false });
+
+        // Arrastrar para desplazarse cuando hay zoom
+        viewport.addEventListener('mousedown', (e) => {
+            if (scale === 1) return;
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            img.style.cursor = 'grabbing';
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            applyTransform();
+        });
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            img.style.cursor = 'grab';
+        });
+
+        // Soporte básico táctil: doble toque para alternar zoom
+        let lastTap = 0;
+        viewport.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTap < 300) {
+                // doble tap
+                if (scale === 1) scale = 2; else { scale = 1; translateX = 0; translateY = 0; }
+                applyTransform();
+            }
+            lastTap = now;
+        });
+    });
+</script>
