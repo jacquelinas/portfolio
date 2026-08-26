@@ -59,7 +59,7 @@ El portafolio está desarrollado como una aplicación web interactiva, moderna y
 - **Correo Electrónico:** jacquelinevall@gmail.com
 - **Perfil de LinkedIn:** [linkedin.com/in/jacquelina](https://linkedin.com/in/jacquelina)
 - **Perfil de Google Developer:** [g.dev/jacquelina](https://g.dev/jacquelina)
-- **Portafolio en Producción:** [jacquevalenzuela.netlify.app](https://jacquelinadevops.netlify.app)
+- **Portafolio en Producción:** [jacquelinadevops.netlify.app](https://jacquelinadevops.netlify.app)
 - **WhatsApp:** +54 9 11 6039 1002
 - **Ubicación:** Buenos Aires, Argentina / Asunción, Paraguay (Disponible para posiciones remotas y consultoría internacional)
 
